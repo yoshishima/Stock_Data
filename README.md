@@ -1,2 +1,3 @@
 # Stock_Symbol_CUSIP_List
-List of Stock Symbols with CUSIP ID number
+List of Stock Symbols with CUSIP ID number 
+Updated with descriptions 
