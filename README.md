@@ -8,22 +8,18 @@ This repository contains a dataset that maps publicly traded company stock symbo
 
 ## Contents
 
-- `stock_cusip_mapping.csv`: Main dataset containing stock symbols and their CUSIP IDs
-- `scripts/`: Utility scripts for updating and maintaining the dataset
-- `historical/`: Archive of previous versions of the dataset
+- `CUSIP.csv`: Main dataset containing stock symbols and their CUSIP IDs
+- `EOD/`: Archive of previous versions of the dataset
 
 ## Data Format
 
 The primary dataset is provided in CSV format with the following columns:
 
-| Column | Description |
+| Column | Description |cusip,symbol,description
 |--------|-------------|
-| Symbol | The stock ticker symbol as used on major exchanges |
 | CUSIP | The 9-character CUSIP identifier |
-| CompanyName | Full registered name of the company |
-| Exchange | Primary exchange where the stock is listed |
-| Category | Industry classification |
-| LastUpdated | Date when this entry was last verified/updated |
+| Symbol | The stock ticker symbol as used on major exchanges |
+| Description | Full registered name of the company / Mutual Fund |
 
 ## Usage
 
@@ -41,13 +37,6 @@ cusip = stock_data[stock_data['Symbol'] == symbol]['CUSIP'].values[0]
 print(f"The CUSIP for {symbol} is {cusip}")
 ```
 
-### Filtering by Exchange
-
-```python
-# Get all stocks from a specific exchange
-nyse_stocks = stock_data[stock_data['Exchange'] == 'NYSE']
-print(f"Found {len(nyse_stocks)} stocks listed on NYSE")
-```
 
 ## Data Sources
 
